@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>SkyRadar</title>
+<link rel="stylesheet" href="leaflet/leaflet.css">
+<style>
+html,body{margin:0;height:100%;background:#0b1220;font-family:system-ui,sans-serif;color:#e8eefc}
+#map{position:absolute;inset:0;background:#0b1220}#ac{position:absolute;left:0;top:0;z-index:450;pointer-events:none}
+#top{position:absolute;z-index:1000;left:8px;right:8px;top:calc(env(safe-area-inset-top,0px) + 8px);display:flex;flex-direction:column;gap:6px}
+#q{padding:11px 14px;border-radius:12px;border:0;background:#101a2eee;color:#fff;font-size:15px;outline:1px solid #2a3a5c}
+#chips{display:flex;gap:6px;flex-wrap:wrap}.c{padding:6px 11px;border-radius:20px;background:#101a2eee;border:1px solid #2a3a5c;font-size:12.5px;color:#9fb0d4}.c.on{background:#ffb703;color:#111;border-color:#ffb703;font-weight:600}
+#st{font-size:11.5px;color:#9fb0d4;padding-left:4px;text-shadow:0 1px 3px #000}
+#sheet{position:absolute;z-index:1100;left:0;right:0;bottom:0;max-height:62%;overflow:auto;background:#0f1a30;border-radius:18px 18px 0 0;padding:14px 16px calc(env(safe-area-inset-bottom,0px) + 14px);transform:translateY(105%);transition:.25s;box-shadow:0 -6px 24px #0008}
+#sheet.o{transform:none}.h{display:flex;justify-content:space-between;align-items:center}.h b{font-size:22px}.x{font-size:24px;padding:0 6px;color:#9fb0d4}
+.sub{color:#9fb0d4;font-size:13px;margin:2px 0 10px}.rt{display:flex;align-items:center;gap:8px;margin:8px 0}.rt div{flex:1}.rt big{font-size:26px;font-weight:700;display:block}.rt small{color:#9fb0d4;font-size:11.5px}
+.bar{height:4px;background:#26365a;border-radius:3px;margin:2px 0 10px}.bar i{display:block;height:100%;background:#ffb703;border-radius:3px}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:8px}.g div{background:#16254411;background:#15234199;padding:8px 10px;border-radius:10px}.g small{display:block;color:#8ea0c8;font-size:11px}.g span{font-size:15px;font-weight:600}
+</style></head><body><div id="map"></div><canvas id="ac"></canvas>
+<div id="top"><input id="q" placeholder="Search callsign, flight, registration…"><div id="chips"><span class="c on" data-f="air">✈ Airborne</span><span class="c on" data-f="gnd">▭ Ground</span><span class="c on" data-f="heli">🚁 Helicopters</span><span class="c" id="sat">🛰 Satellite</span></div><div id="st">Loading…</div></div>
+<div id="sheet"></div><script src="leaflet/leaflet.js"></script><script src="app.js"></script></body></html>
